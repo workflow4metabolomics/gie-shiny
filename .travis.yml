@@ -1,0 +1,15 @@
+sudo: required
+
+language: bash
+
+services:
+  - docker
+
+before_install:
+  - docker build -t shiny-gie:dev .
+  - docker run -d -p 8888:3838 --name test-shiny shiny-gie:dev 
+
+script:
+  - docker ps | grep -q test-shiny
+after_success:
+ - echo "Succes"
