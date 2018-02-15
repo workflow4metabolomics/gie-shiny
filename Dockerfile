@@ -40,7 +40,7 @@ COPY ./shiny-server.conf /etc/shiny-server/shiny-server.conf
 RUN rm -rf /srv/shiny-server/sample-apps
 RUN rm /srv/shiny-server/index.html
 RUN mkdir -p /srv/shiny-server/samples/test
-RUN chmod -R 777 /srv/shiny-server/samples/test
+RUN chmod -R 755 /srv/shiny-server/samples/test
 COPY ./ui.R /srv/shiny-server/samples/test/ui.R
 COPY ./server.R /srv/shiny-server/samples/test/server.R
 
