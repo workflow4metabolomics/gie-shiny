@@ -31,21 +31,16 @@ RUN chmod +x /shiny-server.sh && \
     Rscript /tmp/packages-gx.R && \
     pip install git+https://github.com/bgruening/galaxy_ie_helpers@a4237aa8704938fd87a2a947b1269f34363c933b
 
-
-RUN groupadd -r rshiny -g 1450 && \
-    useradd -u 1450 -r -g rshiny -d /import -c "RShiny User" rshiny && \
-    chown -R rshiny:rshiny /import
-
 # Must happen later, otherwise GalaxyConnector is loaded by default, and fails,
 # preventing ANY execution
 COPY ./Rprofile.site /usr/lib/R/etc/Rprofile.site
 COPY ./shiny-server.conf /etc/shiny-server/shiny-server.conf
 
-
-# for temp app
+# For temp app
 RUN rm -rf /srv/shiny-server/sample-apps
 RUN rm /srv/shiny-server/index.html
 RUN mkdir -p /srv/shiny-server/samples/test
+RUN chmod -R 777 /srv/shiny-server/samples/test
 COPY ./ui.R /srv/shiny-server/samples/test/ui.R
 COPY ./server.R /srv/shiny-server/samples/test/server.R
 

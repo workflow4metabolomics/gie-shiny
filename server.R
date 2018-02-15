@@ -1,4 +1,4 @@
-function(input, output, session) {
+function(input, output) {
 
   # Combine the selected variables into a new data frame
   selectedData <- reactive({
@@ -26,11 +26,12 @@ function(input, output, session) {
   })
 
   path = getwd()
+  setwd(path)
   filename = paste(path, "test.csv", sep="/")
 
   observeEvent(input$export_param, {
     write.table(datasetInput(), filename, row.names = FALSE, col.names = FALSE, sep=";")
-    gx_put("/import/test.csv")
+    gx_put(filename)
   })
 
 }
