@@ -40,4 +40,4 @@ COPY ./shiny-server.conf /etc/shiny-server/shiny-server.conf
 
 # Start Shiny
 COPY ./shiny-server.sh /usr/bin/shiny-server.sh
-CMD /shiny-server.sh
+CMD ["/usr/bin/shiny-server.sh"]
