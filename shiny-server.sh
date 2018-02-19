@@ -5,17 +5,17 @@
 # running on. If /import is not owned by 1450 we need to create a new user with
 # the same UID/GID as /import and make everything accessible to this new user.
 
-uid=$(stat --printf %u /import)
-gid=$(stat --printf %g /import)
+#uid=$(stat --printf %u /import)
+#gid=$(stat --printf %g /import)
 
-if [[ "$uid" -ne "0" ]]; then
+#if [[ "$uid" -ne "0" ]]; then
     # Fix the user + group ID, hopefully no clashes.
-    sed -i "s|:1450:|:$gid:|" /etc/group
-    sed -i "s|:1450:1450:|:$uid:$gid:|" /etc/passwd /etc/passwd-
-fi;
+#    sed -i "s|:1450:|:$gid:|" /etc/group
+#    sed -i "s|:1450:1450:|:$uid:$gid:|" /etc/passwd /etc/passwd-
+#fi;
 
 # Correct permissions on the folder
-chown $uid:$gid /import -R
+#chown $uid:$gid /import -R
 
 # Pass some system environment variables to RStudio environment
 echo "Sys.setenv(DEBUG=\"$DEBUG\")
