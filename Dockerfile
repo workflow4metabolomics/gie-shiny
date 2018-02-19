@@ -16,6 +16,17 @@ COPY ./packages.R /tmp/packages.R
 RUN Rscript /tmp/packages.R
 
 
+# ENV variables to replace conf file from Galaxy
+ENV DEBUG=false \
+    GALAXY_WEB_PORT=10000 \
+    CORS_ORIGIN=none \
+    DOCKER_PORT=none \
+    API_KEY=none \
+    HISTORY_ID=none \
+    REMOTE_HOST=none \
+    GALAXY_URL=none
+
+
 # /import will be the universal mount-point for IPython
 VOLUME ["/import"]
 WORKDIR /import/
@@ -32,17 +43,12 @@ RUN chmod +x /shiny-server.sh && \
     Rscript /tmp/packages-gx.R && \
     pip install git+https://github.com/bgruening/galaxy_ie_helpers@a4237aa8704938fd87a2a947b1269f34363c933b
 
-
-#RUN groupadd -r -g 1450 rshiny && \
-#    useradd -r -u 1450 -g rshiny -d /import -c "RShiny User" -p $(openssl passwd -1 rstudio) rshiny && \
-#RUN chown -R rshiny:rshiny /import
-
-
 # Must happen later, otherwise GalaxyConnector is loaded by default, and fails,
 # preventing ANY execution
 COPY ./Rprofile.site /usr/lib/R/etc/Rprofile.site
 COPY ./shiny-server.conf /etc/shiny-server/shiny-server.conf
 
+RUN chown shiny.shiny /import
 
 # Start Shiny
 COPY ./shiny-server.sh /usr/bin/shiny-server.sh
