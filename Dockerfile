@@ -16,17 +16,6 @@ COPY ./packages.R /tmp/packages.R
 RUN Rscript /tmp/packages.R
 
 
-# ENV variables to replace conf file from Galaxy
-ENV DEBUG=false \
-    GALAXY_WEB_PORT=10000 \
-    CORS_ORIGIN=none \
-    DOCKER_PORT=none \
-    API_KEY=none \
-    HISTORY_ID=none \
-    REMOTE_HOST=none \
-    GALAXY_URL=none
-
-
 # /import will be the universal mount-point for IPython
 VOLUME ["/import"]
 WORKDIR /import/
