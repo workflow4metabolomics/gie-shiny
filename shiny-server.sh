@@ -31,7 +31,7 @@ Sys.setenv(GALAXY_URL=\"$GALAXY_URL\")
 # Make sure the directory for individual app logs exists
 mkdir -p /var/log/shiny-server
 chown shiny.shiny /var/log/shiny-server
-
+chown shiny.shiny /import
 exec /monitor_traffic.sh &
 
 exec shiny-server 2>&1

@@ -37,7 +37,6 @@ RUN chmod +x /shiny-server.sh && \
 COPY ./Rprofile.site /usr/lib/R/etc/Rprofile.site
 COPY ./shiny-server.conf /etc/shiny-server/shiny-server.conf
 
-RUN chown shiny.shiny /import
 
 # Start Shiny
 COPY ./shiny-server.sh /usr/bin/shiny-server.sh
