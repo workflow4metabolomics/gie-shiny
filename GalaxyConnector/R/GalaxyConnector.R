@@ -16,9 +16,9 @@ gx_put <- function(filename, file_type="auto"){
 #'
 #' @param file_id, Dataset ID number for current history
 
-gx_get <- function(files, arg_type="int"){
+gx_get <- function(files, identifier_type="hid"){
     files_id = paste(files, collapse=" ")
-    command <- paste("/usr/local/bin/get", "-i", files_id, "-t", arg_type)
+    command <- paste("/usr/local/bin/get", "-i", files_id, "-t", identifier_type)
     system(command)
     paths = paste0("/import/", files)
     return(paths) 
