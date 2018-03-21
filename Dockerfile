@@ -29,7 +29,7 @@ ADD ./packages-gx.R /tmp/packages-gx.R
 RUN chmod +x /shiny-server.sh && \
     chmod +x /monitor_traffic.sh && \
     Rscript /tmp/packages-gx.R && \
-    pip install git+https://github.com/bgruening/galaxy_ie_helpers@a4237aa8704938fd87a2a947b1269f34363c933b
+    pip install git+https://github.com/bgruening/galaxy_ie_helpers@6c218ae3534fe6add823db3c63ee8c447b0fcbe2
 
 # Must happen later, otherwise GalaxyConnector is loaded by default, and fails,
 # preventing ANY execution
