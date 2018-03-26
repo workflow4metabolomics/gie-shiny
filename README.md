@@ -5,12 +5,29 @@
 This repository allows to run Shiny in a docker container. This image can be used to integrate Shiny into Galaxy.
 A variety of different packages are pre-installed and can be used right away.
 
+
 ## Context
 
 * Based on the work of [ValentinChCloud Shiny GIE](https://github.com/ValentinChCloud/shiny-GIE).
-* Using the repository [rocker/shiny]() to install Shiny.
+* Using the docker [rocker/shiny](https://github.com/rocker-org/shiny) to install Shiny.
 * Adding Galaxy Connectors from [erasche Docker RStudio Container](https://github.com/erasche/docker-rstudio-notebook) to import/export datasets.
 * Using the [Galaxy IE helpers by bgruening](https://github.com/bgruening/galaxy_ie_helpers).
+
+
+## How to interact with Galaxy
+
+From the R application file, you can interact with your history files thanks to Galaxy Connectors. See the example below :
+
+```R
+gx_get(FILE_ID)
+gx_get(FILE_ID1, FILE_ID2, ...)
+gx_get(FILENAME, identifier_type = "name")
+gx_get(FILENAME1, FILENAME2 , ... , identifier_type = "name")
+
+gx_put(FILENAME)
+gx_put(FILENAME1, FILENAME2, ...)
+```
+
 
 ## Usage
 
@@ -21,6 +38,7 @@ A variety of different packages are pre-installed and can be used right away.
 ```
 FROM quay.io/workflow4metabolomics/gie-shiny:latest
 ```
+
 
 ### Build localy 
 
@@ -39,6 +57,12 @@ FROM quay.io/workflow4metabolomics/gie-shiny:latest
  ```
  and you will have a running Shiny instance on ``http://localhost:3838/``.
  
+ 
  ## Application list
  
  * [gie-shiny-chromato](https://github.com/workflow4metabolomics/gie-shiny-chromato) : This application allows to visualize TIC and BPC chromatograms. 
+ 
+ 
+ ## Galaxy Interactive Environment installation
+ 
+ If you have not already installed your Galaxy Interactive Environment, you can follow the tutorial at the following link : [Tutorial for GIE installation](https://github.com/RomainDallet/Shiny_GIE_installation)
