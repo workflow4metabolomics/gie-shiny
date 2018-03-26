@@ -14,7 +14,7 @@ A variety of different packages are pre-installed and can be used right away.
 
 ## Usage
 
-### From the pre-build image
+### From the pre-built image
 
 [![Docker Repository on Quay](https://quay.io/repository/workflow4metabolomics/gie-shiny/status "Docker Repository on Quay")](https://quay.io/repository/workflow4metabolomics/gie-shiny)
 
@@ -37,7 +37,7 @@ FROM quay.io/workflow4metabolomics/gie-shiny:latest
  ```bash
  $ docker run -p 3838:3838 -v /home/user/foo/:/import/ -t gie-shiny
  ```
- and you will have a running RShiny instance on ``http://localhost:3838/``.
+ and you will have a running Shiny instance on ``http://localhost:3838/``.
  
  ## Application list
  
