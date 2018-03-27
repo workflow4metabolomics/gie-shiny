@@ -5,8 +5,16 @@
 This repository allows to run Shiny in a docker container. This image can be used to integrate Shiny into Galaxy.
 A variety of different packages are pre-installed and can be used right away.
 
+# Table of Contents <a name="toc" />
+- [Context](#Context)
+- [Galaxy Interactive Environment installation](#galaxy-interactive-environment-installation)
+- [How to use this Docker image](#how-to-use-this-docker-image)
+  - [From the pre-built image](#from-the-pre-built-image)
+  - [Build the image locally](#build-the-image-locally)
+- [How to interact with Galaxy](#how-to-interact-with-galaxy)
+- [Application list](#application-list)
 
-## Context
+## Context [[toc]](#toc)
 
 * Based on the work of ValentinChCloud [Shiny GIE](https://github.com/ValentinChCloud/shiny-GIE).
 * Using the docker [rocker/shiny](https://github.com/rocker-org/shiny) to install Shiny.
@@ -14,14 +22,14 @@ A variety of different packages are pre-installed and can be used right away.
 * Using the [Galaxy IE helpers](https://github.com/bgruening/galaxy_ie_helpers) by bgruening.
 
 
-## Galaxy Interactive Environment installation
+## Galaxy Interactive Environment installation [[toc]](#toc)
  
  If you have not already installed your Galaxy Interactive Environment, you can follow the tutorial at the following link : [Tutorial for GIE installation](https://github.com/RomainDallet/Shiny_GIE_installation)
 
 
-## Usage
+## How to use this Docker image [[toc]](#toc)
 
-### From the pre-built image
+### From the pre-built image [[toc]](#toc)
 
 [![Docker Repository on Quay](https://quay.io/repository/workflow4metabolomics/gie-shiny/status "Docker Repository on Quay")](https://quay.io/repository/workflow4metabolomics/gie-shiny)
 
@@ -30,7 +38,7 @@ FROM quay.io/workflow4metabolomics/gie-shiny:latest
 ```
 
 
-### Build localy 
+### Build the image locally [[toc]](#toc)
 
 * Build your own image
 
@@ -48,9 +56,9 @@ FROM quay.io/workflow4metabolomics/gie-shiny:latest
  and you will have a running Shiny instance on ``http://localhost:3838/``.
  
  
- ## How to interact with Galaxy
+ ## How to interact with Galaxy [[toc]](#toc)
 
-From the R application file, you can interact with your history files thanks to Galaxy Connectors. See the example below to import or export files :
+Within the R application file, you can interact with your history files thanks to Galaxy Connectors. See the example below to import or export files :
 
 ```R
 gx_get(FILE_ID)
@@ -63,6 +71,6 @@ gx_put(FILENAME1, FILENAME2, ...)
 ```
 
  
- ## Application list
+ ## Application list [[toc]](#toc)
  
  * [gie-shiny-chromato](https://github.com/workflow4metabolomics/gie-shiny-chromato) : This application allows to visualize TIC and BPC chromatograms. 
