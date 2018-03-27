@@ -8,10 +8,10 @@ A variety of different packages are pre-installed and can be used right away.
 
 ## Context
 
-* Based on the work of [ValentinChCloud Shiny GIE](https://github.com/ValentinChCloud/shiny-GIE).
+* Based on the work of ValentinChCloud [Shiny GIE](https://github.com/ValentinChCloud/shiny-GIE).
 * Using the docker [rocker/shiny](https://github.com/rocker-org/shiny) to install Shiny.
-* Adding Galaxy Connectors from [erasche Docker RStudio Container](https://github.com/erasche/docker-rstudio-notebook) to import/export datasets.
-* Using the [Galaxy IE helpers by bgruening](https://github.com/bgruening/galaxy_ie_helpers).
+* Adding Galaxy Connectors from erasche [Docker RStudio Container](https://github.com/erasche/docker-rstudio-notebook) to import/export datasets.
+* Using the [Galaxy IE helpers](https://github.com/bgruening/galaxy_ie_helpers) by bgruening.
 
 
 ## Galaxy Interactive Environment installation
