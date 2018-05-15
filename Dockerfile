@@ -5,7 +5,7 @@ RUN apt-get update && \
     apt-get install --no-install-recommends -y \
         wget procps sudo \
         libcurl4-openssl-dev curl libxml2-dev python-pip net-tools \
-	libssl-dev git
+	libssl-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev git
 
 RUN pip install --upgrade setuptools
 RUN pip install bioblend && \
