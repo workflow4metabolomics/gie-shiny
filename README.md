@@ -74,3 +74,4 @@ gx_put(FILENAME1, FILENAME2, ...)
  ## Application list <a name="application-list" /> [[toc]](#toc)
  
  * [gie-shiny-chromato](https://github.com/workflow4metabolomics/gie-shiny-chromato) : This application allows to visualize TIC and BPC chromatograms. 
+ * [gie-shiny-pca](https://github.com/workflow4metabolomics/gie-shiny-pca) : This application allows to visualize PCA. 
