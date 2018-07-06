@@ -26,6 +26,7 @@ Sys.setenv(API_KEY=\"$API_KEY\")
 Sys.setenv(HISTORY_ID=\"$HISTORY_ID\")
 Sys.setenv(REMOTE_HOST=\"$REMOTE_HOST\")
 Sys.setenv(GALAXY_URL=\"$GALAXY_URL\")
+Sys.setenv(ORIGIN_FILENAME=\"$ORIGIN_FILENAME\")
 " >> /usr/lib/R/etc/Rprofile.site
 
 # Make sure the directory for individual app logs exists
